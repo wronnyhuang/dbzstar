@@ -1,0 +1,661 @@
+<! Property of DBGT.COM and its Owners>
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>:::: DBGT.COM ::::</title>
+<base target="_self">
+
+<MAX CONTENT WIDTH=425px>
+
+<CSS BEGIN HERE>
+
+<style type="text/css">
+a { text-decoration: none; }
+a:link { color: #6D7C96; }
+a:visited { color: #6D7C96; }
+a:active { color: #CCCCCC; }
+a:hover { color: #CCCCCC; text-decoration: none; }
+div, td { color: #444444; font-family: Tahoma; font-size: 8pt; }
+.x { color: #6D7C96; font-weight: bold; }
+.y { border-collapse: collapse; border: 1px solid #C0C0C0}
+.z { bgcolor="#EFEFEF" }
+.p { color: #FFFFFF; }
+</style>
+
+<NO VIEWING SOURCE BEGIN HERE>
+
+
+
+<NO RIGHT CLICK CODE BEGIN HERE>
+
+<script language="JavaScript1.2">
+
+/*
+
+No Right Click
+
+   by: Hotscripts
+
+*/
+
+if (window.Event) // Only Netscape will have the CAPITAL E.
+
+  document.captureEvents(Event.MOUSEUP); // catch the mouse up event
+
+function nocontextmenu()  // this function only applies to IE4, ignored otherwise.
+
+{
+
+	event.cancelBubble = true
+
+	event.returnValue = false;
+
+	return false;
+
+}
+
+function norightclick(e)	// This function is used by all others
+
+{
+
+	if (window.Event)	// again, IE or NAV?
+
+	{
+
+		if (e.which == 2 || e.which == 3)
+
+			return false;
+
+	}
+
+	else
+
+		if (event.button == 2 || event.button == 3)
+
+		{
+
+			event.cancelBubble = true
+
+			event.returnValue = false;
+
+			return false;
+
+		}
+
+}
+
+document.oncontextmenu = nocontextmenu;		// for IE5+
+
+document.onmousedown = norightclick;		// for all others
+
+</script>
+
+<NO TEXT HIGHLIGHTING CODE BEGIN HERE>
+
+<script language="JavaScript1.2">
+
+//Disable select-text script (IE4+, NS6+)- By Andy Scott
+//Exclusive permission granted to Dynamic Drive to feature script
+
+function disableselect(e){
+return false
+}
+
+function reEnable(){
+return true
+}
+
+//if IE4+
+document.onselectstart=new Function ("return false")
+
+//if NS6
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+<script language="JavaScript1.2">
+//Gradual-Highlight image script- By Dynamic Drive
+//For full source code and more DHTML scripts, visit http://www.dynamicdrive.com
+//This credit MUST stay intact for use
+function high(which2){
+theobject=which2
+highlighting=setInterval("highlightit(theobject)",50)
+}
+function low(which2){
+clearInterval(highlighting)
+if (which2.style.MozOpacity)
+which2.style.MozOpacity=0.3
+else if (which2.filters)
+which2.filters.alpha.opacity=25
+}
+function highlightit(cur2){
+if (cur2.style.MozOpacity<1)
+cur2.style.MozOpacity=parseFloat(cur2.style.MozOpacity)+0.1
+else if (cur2.filters&&cur2.filters.alpha.opacity<100)
+cur2.filters.alpha.opacity+=10
+else if (window.highlighting)
+clearInterval(highlighting)
+}
+</script>
+</head>
+
+<style
+
+type="text/css">
+
+body         { scrollbar-face-color: #d1d6dE; scrollbar-shadow-color: #777777; 
+
+               scrollbar-highlight-color: #ffffff; scrollbar-3dlight-color: 
+
+               #777777; scrollbar-darkshadow-color: #dedede; 
+
+               scrollbar-track-color: #dedede; scrollbar-arrow-color: #777777 }
+
+</style>
+
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+
+<div align="left">
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+    <tr>
+      <td width="100%" bgcolor="#C0C0C0" background="img/logo_bg.jpg" height="200"><left>
+      
+      <LOGO BEGIN>
+      
+      <img border="0" src="img/logo.jpg" width="600" height="200"></left></td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#C0C0C0" background="img/nav_bg.jpg" height="36" valign="top">
+      
+      <NAVIGATION BEGIN>
+      
+      <left><img border="0" src="img/nav.jpg" width="90" height="36"><a title=":::.Homepage" href="index.php"><img border="0" src="img/nav_mainpage.jpg" width="90" height="36"></a><a title=":::.Dragon Ball" href="index.php?dbgt=db"><img border="0" src="img/nav_db.jpg" width="90" height="36"></a><a title=":::.Dragon Ball Z" href="index.php?dbgt=dbz"><img border="0" src="img/nav_dbz.jpg" width="90" height="36"></a><a title=":::.Dragon Ball GT" href="index.php?dbgt=dbgt"><img border="0" src="img/nav_dbgt.jpg" width="90" height="36"></a><a title=":::.Multimedia" href="index.php?dbgt=multimedia"><img border="0" src="img/nav_multimedia.jpg" width="90" height="36"></a><a title=":::.Miscellaneous" href="index.php?dbgt=miscellaneous"><img border="0" src="img/nav_misc.jpg" width="90" height="36"></a></left></td>
+    </tr>
+    <tr>
+      <td width="100%">&nbsp;&nbsp; </td>
+    </tr>
+  </table>
+</div>
+
+<div align="left">
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber6" bgcolor="#FFFFFF">
+    <tr>
+      <td width="150">
+      <div align="left">
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber10" bgcolor="#CCCCCC" background="img/title_bg.jpg">
+          <tr>
+            <td width="1%">&nbsp;</td>
+            <td width="65%">
+            
+            <SUBNAV BEGIN>
+            
+            <img border="0" src="img/tab_subnav.jpg" width="120" height="20"></td>
+            <td width="34%">
+            <p align="right">
+            <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+          </tr>
+        </table>
+      </div>
+      </td>
+      <td bgcolor="#FFFFFF" width="15" rowspan="2">&nbsp;</td>
+      <td width="470" bgcolor="#CCCCCC" background="img/title_bg.jpg">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber22" bgcolor="#C0C0C0" background="img/title_bg.jpg">
+        <tr>
+            <td width="1%" style="color: #444444; font-family: Tahoma; font-size: 8pt">
+            <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+            <td width="65%" style="color: #444444; font-family: Tahoma; font-size: 8pt">
+            
+            <SPONSORED ADVERT BEGIN>
+            
+            <img border="0" src="img/tab_sponsoredad.jpg" width="120" height="20"></td>
+            <td width="34%" style="color: #444444; font-family: Tahoma; font-size: 8pt">
+            <p align="right">
+            <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+          </tr>
+      </table>
+      </td>
+      <td bgcolor="#FFFFFF" width="15" rowspan="2">&nbsp;</td>
+      <td width="150">
+      <div align="left">
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber8" bgcolor="#C0C0C0" background="img/title_bg.jpg">
+          <tr>
+            <td width="3%">
+            <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+            <td width="90%">
+            <p align="left">
+            
+            <SITE FEATURES BEGIN>
+            
+            <img border="0" src="img/tab_features.jpg" width="120" height="20"></td>
+            <td width="7%">
+            <p align="right">
+            <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+          </tr>
+        </table>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="150" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber12" bgcolor="#E8EBF0">
+        <tr>
+          <td width="100%" style="border-right: 1px solid #CCCCCC; padding: 5">
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=news">Homepage</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="animenews.php">Anime News</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=multimedia">Multimedia</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=information">Information</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=miscellaneous">Miscellaneous</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=humor">Humor</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=games">Gaming</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=fanfeed">Fan Feed</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=linkus">Link Us</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=faq">FAQ</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="index.php?dbgt=contact">Contact Us</a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding: 0; ">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber20" bgcolor="#C0C0C0" background="img/title_bg.jpg">
+              <tr>
+                <td width="3%">&nbsp;</td>
+                <td width="63%">
+                
+                <SUBNAV BEGIN>
+                
+                <img border="0" src="img/tab_misc.jpg" width="120" height="20"></td>
+                <td width="34%">
+                <p align="right">
+                <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-right: 1px solid #CCCCCC; padding: 5">
+          <b>
+          <img border="0" src="img/button.gif" width="11" height="11" align="absmiddle"> DB / Z / GT:</b><br>
+          Informative Content:<br>
+          <font color="#6D7C96">Highly Detailed<br>
+          <span style="font-size: 2pt">&nbsp;&nbsp;&nbsp; </span></font><br>
+          <center>
+          <a href="http://www.dbgt.com/index.php?dbgt=information"><img border="0" src="http://www.dbgt.com/miscmisc.jpg" width="100" height="180"></a>
+         
+          </center></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding: 0; ">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber21" bgcolor="#CCCCCC" background="img/title_bg.jpg">
+              <tr>
+                <td width="3%">&nbsp;</td>
+                <td width="63%">
+                
+                <VOTING POLL>
+                
+                <img border="0" src="img/tab_poll.jpg" width="120" height="20"></td>
+                <td width="34%">
+                <p align="right">
+                <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-right: 1px solid #CCCCCC; padding: 5">
+          <b><font size="1">*currently out of order*<br><br></b><font>
+ </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 5">
+          <b>
+          <img border="0" src="img/button.gif" width="11" height="11" align="absmiddle"> 
+          DBGT.com Version 2.0</b></td>
+        </tr>
+      </table>
+      </td>
+      <td width="470" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber13" bgcolor="#E8EBF0">
+        <tr>
+          <td width="100%" style="padding:0; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; ">
+          <p align="center">
+<a href='http://ads.ascendedhost.com/adclick.php?n=ad31115a' target='_blank'><img src='http://ads.ascendedhost.com/adview.php?what=zone:1&amp;n=ad31115a' border='0' alt=''></a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding:0; ">
+          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber22" bgcolor="#C0C0C0" background="img/title_bg.jpg">
+            <tr>
+            <td width="1%" style="color: #444444; font-family: Tahoma; font-size: 8pt">
+            <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+            <td width="65%" style="color: #444444; font-family: Tahoma; font-size: 8pt">
+            
+            <CONTENT BEGIN>
+            
+            <img border="0" src="img/tab_content.jpg" width="120" height="20"></td>
+            <td width="34%" style="color: #444444; font-family: Tahoma; font-size: 8pt">
+            <p align="right">
+            <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-left: 1px solid #CCCCCC; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding-left: 20; padding-right: 20; padding-top: 10; padding-bottom: 10">
+          <table border="0" cellpadding="0" cellspacing="0" bordercolor="#111111" width="425" id="AutoNumber19">
+            <tr>
+              <td><p align="justify">&nbsp;<!--webbot bot="HTMLMarkup" startspan -->
+	<!-- NP v3.7.5 -->
+	<a name="newsitem1059814514,87542,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Majin Gohan.jpg" align="left" hspace="5"><b>DBGT Informative Content Added</b><br>2003'8'2</span> ++ posted by<b><a href="mailto:majingohan@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> Majin Gohan</a></b></b><br>Hey everyone, I've just added SoulTaker's latest information piece to the DBGT information section. Its a argumental page that is much speculated upon. Of whether a Super Saiyan 4 is really a Super Saiyan Transformation or an Oozaru Transformation because of the look. Soultaker explains both sides of the story in this piece. If your interested, take a look and read about it // Thats it for now, tommarow I think I'm going to add some FanFics /// MG Out...<br><br><b>*<a href=http://www.dbgt.com/index.php?dbgt=information/dbgt/ssj4trans">SSJ4 - Super Saiyan or Oozaru Transformation?</a></b><br><br><br><br>
+<a name="newsitem1059726663,34862,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Majin Gohan.jpg" align="left" hspace="5"><b>10 New Avatars!</b><br>2003'8'1</span> ++ posted by<b><a href="mailto:majingohan@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> Majin Gohan</a></b></b><br>Hey everyone, quick content update today. I've added a new page to the Free Stuff section, which consists of <a href="http://www.dbgt.com/index.php?dbgt=miscellaneous/avatars">free avatars</a>. For now we have 10 free avatars courteousy of Valix. So if you need a new avatar or wanna check out the ones we have, stroll on over to our Miscellaneous section and check it out. More content to come later, but thats it for now /// MG Out...<br><br><b>*<a href="http://www.dbgt.com/index.php?dbgt=miscellaneous/avatars">Free Avatars</a></b><br><br><br>
+<a name="newsitem1059617927,18241,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Majin Gohan.jpg" align="left" hspace="5"><b>Gallery Down Temporarily</b><br>2003'7'30</span> ++ posted by<b><a href="mailto:majingohan@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> Majin Gohan</a></b></b><br>Hey everyone, because of a high server load, we've had to take down the gallery for about a day or two. So its under control and it'll be back really soon, with lots of new video clips JamJar has been itching to put up.<br><br>In other news, we recently got a new affiliation, DaBlackKrillin, whose site is very slick and impressive, an old friend of mine, go and check'em out. I'm also hoping to have some content today or tommarow, thats it for now /// MG Out...<br><br><br><br>
+<a name="newsitem1059516803,72248,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Mystic Gojita.jpg" align="left" hspace="5"><b>Sorry for the delay</b><br>2003'7'29</span> ++ posted by<b><a href="mailto:mysticgojita@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> Mystic Gojita</a></b></b><br>Sup ya,ll. Sorry about the drought of DBNG. Truth is that I haven't even started on episode 7... but I have an explanation. Over the last 3 weeks I've EXTREMELY busy. I've only been home for ,like, a day/ <br>So anyway I promise to get to work on it ASAP. Also, NG is fixin' to get real exitin'<br><br>Mystic Gojita<br><br>P.S. Awsome job on the new Fan Fics to both of the new wrighters.<br><br>
+<a name="newsitem1059511877,73902,"></a>
+<img border="0" src="http://www.dbgt.com/gui/JamJar.jpg" align="left" hspace="5"><b>An Update</b><br>2003'7'29</span> ++ posted by<b><a href="mailto:jamjar@pgdnet.com?subject=DBGT.COM VISITOR CONTACT"> JamJar</a></b></b><br>Hey people, sorry I havnt posted for some time, I have been very busy with some web design things lately.  I'm sorry the gallery has been so slow lately, hopefully we will be moving to a faster web server soon.  And may even be getting a new layout for gallery.  As of today I am officially releasing reverbe, everything is complete on the website, feel free to sign up.  Thank you, those people who have already signed up.  If anyone has any requests for the gallery, I'm sure I'll be happy to put them up.  When we do move to the new server, I have lots of video clips to put up.<br><br>
+<a name="newsitem1059344833,50373,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Valix.jpg" align="left" hspace="5"><b>He Is Back Finally</b><br>2003'7'27</span> ++ posted by<b><a href="mailto:Supremejebus@hotmail.com?subject=DBGT.COM VISITOR CONTACT"> Valix</a></b></b><br>Well let me see here hmmm where to start ok I know where, This is channel DBGT news here covering the story of the century....Valix is finally gonna do some stuff for the free section of DBGT that includes like twenty free avatars and some tutorials that will be done by today for photoshop starting from basic to advance level for you webbie guys out there. I may even toss some fireworks tutorials as well. That is all for today till the next...walks away into the shadows of DBGT.<br><br>
+<a name="newsitem1059296079,25809,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Majin Gohan.jpg" align="left" hspace="5"><b>Two New Fan Fics Added</b><br>2003'7'27</span> ++ posted by<b><a href="mailto:majingohan@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> Majin Gohan</a></b></b><br>Hey everyone, I put up two Fan Fics that I had been holding onto for a while, just hadn't time to put up. One fanfic is a series with one episode so far called <a href="http://www.dbgt.com/index.php?dbgt=fanfeed/dbm/dbm">Dragon Ball Millenia</a>, probably more to come soon. And the second fanfic is considered a DBZ Movie about a <a href="http://www.dbgt.com/index.php?dbgt=fanfeed/majindb/majindb">"Majin Dragon Ball"</a>. Both are very well written and have interesting plots. So if your looking to read some Fan Written stories about DB, check out those two fanfics. Thats it for now, I'll add some more stuff tommarow /// MG Out...<br><br><b>*<a href="http://www.dbgt.com/index.php?dbgt=fanfeed/majindb/majindb">The Majin Dragon Ball Movie</a><br>*<a href="http://www.dbgt.com/index.php?dbgt=fanfeed/dbm/dbm">Dragon Ball Millenia</a></b><br><br>
+<a name="newsitem1059208628,17410,"></a>
+<img border="0" src="http://www.dbgt.com/gui/Majin Gohan.jpg" align="left" hspace="5"><b>New FanArt and Anime News Setup</b><br>2003'7'26</span> ++ posted by<b><a href="mailto:majingohan@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> Majin Gohan</a></b></b><br>Hey everyone, first of all, I was busy today, so I only have a small update for now. I added two new pieces of Fanart. One of <a href="http://www.dbgt.com/index.php?dbgt=fanfeed/fanart/buu">Majin Buu</a> and one of <a href="http://www.dbgt.com/index.php?dbgt=fanfeed/fanart/gohan">SSJ2 Gohan</a>, so go check those out in the Fan Feed Section. <br><br>About the Anime News Update, that section is almost underway once again. I just wanted to inform those that ffx shan hired that I will have your accounts setup tommarow. So that means, the Anime News Section should be underway once again either tommarow, or the day after. Thats it for now, tommarow I'm gonna try to add some Fan Fictions that I've been holding onto for a while /// MG Out...<br><br><b>*<a href="http://www.dbgt.com/index.php?dbgt=fanfeed/fanart/buu">Majin Buu Fanart</a><br><b>*<a href="http://www.dbgt.com/index.php?dbgt=fanfeed/fanart/gohan">Gohan Fanart</a></b><br><br>
+<a name="newsitem1059116807,14223,"></a>
+<img border="0" src="http://www.dbgt.com/gui/ffX Shan.jpg" align="left" hspace="5"><b>Reporting for Duty...</b><br>2003'7'25</span> ++ posted by<b><a href="mailto:ffxshan@dbgt.com?subject=DBGT.COM VISITOR CONTACT"> ffX Shan</a></b></b><br>Yes, cheesy title. This isn't a new staff member. In fact, it is your old staff member Draton. This is my new alias on the net. If you don't like it, tough. Anyway, I've been quiet for a while on DBGT because I've been helping other sites and whatnot. In fact, you won't be hearing from me in another 4-5 weeks. However, when I get back, I'll be sure to send in some info pages and such. I've fixed the anime news section and have gotten plentiful replies on the job. I've already decided that I'm going to select 2, so please no more applications. It'll be hard choosing from the folks that applied but I'll get to it. I'll be hiring the staffers by tomorrow. That's all from me as of now. [Draton, signing out...]<br><br>
+<a name="newsitem1059091098,38254,"></a>
+<img border="0" src="http://www.dbgt.com/gui/The Prophecy.jpg" align="left" hspace="5"><b>Hehehehe apologies......</b><br>2003'7'24</span> ++ posted by<b><a href="mailto:chris.kowalczyk@comcast.net?subject=DBGT.COM VISITOR CONTACT"> The Prophecy</a></b></b><br>Sup, I have not posted and wrote an article for a long time, but I am currently working on a game review for Zelda Windwaker, so look forward to that, and um I have been bothering the webbys about insignifecent things that need to be fixed, sorry for that, I am just trying to help thats all.<br><br>Peace<br><br>
+<!--webbot bot="HTMLMarkup" endspan i-checksum="18580" --></p></td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" bgcolor="#FFFFFF" style="padding-top: 10">
+          <p align="center"><a href="#">Back To Top</a> - <a href="index.php">
+          Return To Homepage</a><br><br><b>
+<a href="http://www.delugeonline.com">Sports Book</a><br>
+
+                   <a href="http://www.1-poker-games.com">Online Poker</a></b></td>
+        </tr>
+        </table>
+      </td>
+      <td width="150" valign="top">
+      <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; " bordercolor="#111111" width="100%" id="AutoNumber14" bgcolor="#E8EBF0">
+        <tr>
+          <td width="100%" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; color:#444444; font-family:Tahoma; font-size:8pt; padding-left:0; padding-right:0; padding-top:5; padding-bottom:5">
+          <p align="center">
+          <a title="Support Us" target="_blank" href="http://www.mod-chip.com/click/clickme/click.cgi?mghen">
+          <img border="0" src="img/modchip.jpg" width="140" height="50"></a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; padding:5; color:#444444; font-family:Tahoma; font-size:8pt">Please Support 
+          Us -
+          <a title="Support us" target="_blank" href="http://www.mod-chip.com/click/clickme/click.cgi?mghen">Modchip</a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding: 0; color:#444444; font-family:Tahoma; font-size:8pt">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber15" background="img/title_bg.jpg">
+              <tr>
+                <td width="3%">
+                <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+                <td width="63%">
+                
+                <AFFILIATES BEGIN>
+                
+                <img border="0" src="img/tab_affiliates.jpg" width="120" height="20"></td>
+                <td width="34%">
+                <p align="right">
+                <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; padding:5; color:#444444; font-family:Tahoma; font-size:8pt">
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://animega.net/" target="_blank" style="text-decoration: none">
+          Animega</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.anime-assassins.com/" target="_blank" style="text-decoration: none">
+          Anime-Assassins</a> <br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.blackgoku.com/" target="_blank" style="text-decoration: none">
+          Da Black Goku</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.dablackkrillin.net/" target="_blank" style="text-decoration: none">
+          Da Black Krillin</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.gojiita.net/" target="_blank" style="text-decoration: none">
+          Gojiita's Domain</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.saiyanz-rage.net/" target="_blank" style="text-decoration: none">
+          SaiyanZ Rage</a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding: 0; color:#444444; font-family:Tahoma; font-size:8pt">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber16" bgcolor="#C0C0C0" background="img/title_bg.jpg">
+              <tr>
+                <td width="3%">
+                <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+                <td width="63%">
+                
+                <PARTNER SITES BEGIN>
+                
+                <img border="0" src="img/tab_partners.jpg" width="120" height="20"></td>
+                <td width="34%">
+                <p align="right">
+                <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; padding:5; color:#444444; font-family:Tahoma; font-size:8pt">
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.freeezinebucks.com/ps.php?s=76&u=henheng" target="_blank" style="text-decoration: none">
+          Anime Babes</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://ads.ascendedhost.com/adclick.php?n=ad31115a" target="_blank" style="text-decoration: none">
+          Ascended Host</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.heavendream.com/" target="_blank" style="text-decoration: none">
+          Heaven Dream</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://www.metalblue.org/" target="_blank" style="text-decoration: none">
+          Metal Blue</a><br>
+          <span style="font-size: 7pt">-&nbsp; </span>
+          <a href="http://topsite.pgdnet.com//in.php?site=1039261093" target="_blank" style="text-decoration: none">
+          Pgdfx Topsites</a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding: 0; color:#444444; font-family:Tahoma; font-size:8pt" bgcolor="#C0C0C0">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber17" background="img/title_bg.jpg">
+              <tr>
+                <td width="3%">
+                <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+                <td width="63%">
+                
+                <WEBSITE INFORMATION BEGIN>
+                
+                <img border="0" src="img/tab_siteinfo.jpg" width="120" height="20"></td>
+                <td width="34%">
+                <p align="right">
+                <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; padding:5; color:#444444; font-family:Tahoma; font-size:8pt">
+          <b>
+          <img border="0" src="img/button.gif" width="11" height="11" align="absmiddle"> 
+          Website Bio:</b><br>
+          Layout Revision: <font color="#6D7C96">04/18/03</font><br>
+          Site Creation: <font color="#6D7C96">-'97</font><br>
+          Webmaster: <a href="mailto:majingohan@dbgt.com">Majin Gohan</a><br>
+          Founded By: <font color="#6D7C96">Ruben Rodas</font><br>
+          Site Layout Copyright: <a href="http://www.pgdnet.com">Pgd</a><br>
+          Live Stats: <a href="/online/usersonline.php"><b>10</b> users online</a></td>
+        </tr>
+        <tr>
+          <td width="100%" style="padding:0; color:#444444; font-family:Tahoma; font-size:8pt">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber18" bgcolor="#C0C0C0" background="img/title_bg.jpg">
+              <tr>
+                <td width="3%">
+                <img border="0" src="img/title_left.jpg" width="3" height="20"></td>
+                <td width="63%">
+                
+                <NEWS TICKER BEGIN>
+                
+                <img border="0" src="img/tab_newsticker.jpg" width="120" height="20"></td>
+                <td width="34%">
+                <p align="right">
+                <img border="0" src="img/title_right.jpg" width="3" height="20"></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; padding:5; color:#444444; font-family:Tahoma; font-size:8pt">    
+          <marquee style="WIDTH: 135px; HEIGHT: 50px" scrollAmount="1" direction="up">
+<B>Site News:</B> The Site is moving along and growing gradually, it may be slow, but we are moving at a good steady 
+pace so this site can regain the calibur it once had. We currently have an excellent staff who is bringing you lots 
+of original information and interaction on the site. We're also constantly working on having media up, and having it 
+stay up for as long as possible / Keep Visitng /<BR><BR>
+
+<B>Majin Gohan</B> is getting busier by the day with life among other things. But still has love for the site and Dragon Ball
+in general. He tries his hardest to keep the site organized and going.<BR><BR>
+
+<B>Donate</B>: Running the site is getting harder and harder because of the server costs, which are well over $100. 
+Since we need a really good server to suit DBGT's needs and to give a pleasant time for you the fans, it could be 
+made easier however through donations. So if you got a couple extra bucks lying around or just want to help us out, 
+please donate to the site using the paypal button below / Thank You All! /
+
+</marquee></td>
+        </tr>
+        <tr>
+          <td width="100%" style="border-bottom:1px solid #CCCCCC; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; padding:5; color:#444444; font-family:Tahoma; font-size:8pt">
+          <b>
+          <img border="0" src="img/button.gif" width="11" height="11" align="absmiddle"> 
+          Support Us: <br>
+          <span style="font-size: 2pt">&nbsp;&nbsp; </span>
+          </b><center>
+<A HREF="http://www.ultimate50.com/aff.prg?dball,1573" target="_blank"><IMG
+SRC="http://www.ultimate50.com/dball/b/1/1573.gif"
+ALT="Click Here to Visit!" WIDTH=88 HEIGHT=31 BORDER=0></A><br><br>
+          <a href="http://www.pgdnet.com//in.php?site=1039261093" target="_blank">
+          <img src="http://www.pgdnet.com/images/links/pgd2.jpg" border="0" width="88" height="31"></a><br><br>
+
+          <a href="http://www.reverbe.com" target="_blank">
+          <img src="http://www.dbgt.com/reverbe.gif" border="0" width="88" height="31"></a></center><br><br>
+
+</center></td>
+        </tr>
+
+
+      </table>
+      </td>
+    </tr>
+    </table>
+</div>
+
+
+<FOOTER BEGIN>
+
+<div align="left">
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4" height="109">
+    <tr>
+      <td width="100%" height="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+    </tr>
+    <tr>
+      <td width="100%" height="83">
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="715" id="AutoNumber5">
+          <tr>
+		
+            <td bgcolor="#CCCCCC" background="img/advertisement_bg.jpg" width="484" height="100" style="padding-left: 16; padding-top: 16" valign="top">
+            <a href="http://ads.ascendedhost.com/adclick.php?n=ad31115a" target="_blank"><img src="http://www.ascendedhost.com/banner3.jpg" border="0"></a></td>
+            <td width="15" height="100" style="padding-left: 0; padding-top: 0" valign="top">
+            &nbsp; </td>
+            <td width="200">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="majingohan@dbgt.com">
+<input type="hidden" name="item_name" value="DBGT.COM Donation Fund">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="tax" value="0">
+<input type="image" src="img/donate1.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" width="200" height="100">
+</form></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </td>
+    </tr>
+    </table>
+</div>
+<div align="left">
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+    <tr>
+      <td width="55%" bgcolor="#CCCCCC" background="img/footer_bg.jpg">
+      <img border="0" src="img/footer.jpg" width="400" height="36"></td>
+      <td width="145%" bgcolor="#CCCCCC" background="img/footer_bg.jpg" style="padding-right: 10">
+      <div align="right">
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="200" id="AutoNumber3">
+          <tr>
+            <td>
+            <p align="right">
+            
+<font size=1 color=#CCCCCC>
+<a href="http://w.extreme-dm.com/?login=mgdbgt" target="_blank">
+<img src="http://w1.extreme-dm.com/i.gif" height=10
+border=0 width=12 alt=""></a><script language="javascript1.2"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;//-->
+</script><script language="javascript"><!--
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=\"http://w0.extreme-dm.com",
+"/0.gif?tag=mgdbgt&j=y&srw="+EXw+"&srb="+EXb+"&",
+"l="+escape(EXd.referrer)+"\" height=1 width=1>");//-->
+</script><noscript><img height=1 width=1 alt=""
+src="http://w0.extreme-dm.com/0.gif?tag=mgdbgt&j=n"></noscript>
+</font>            
+            </td>
+          </tr>
+        </table>
+      </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+
+</html>

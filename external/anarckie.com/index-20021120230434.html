@@ -1,0 +1,621 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Anarckie.com // Jarvis Network</TITLE>
+<META http-equiv=Content-Type forum="text/html; charset=windows-800">
+<LINK href="new/a_files/main_styles.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript>
+<!--Hide from differently-abled browsers
+//Netscape stuff--event handler and variables for checking cursor location
+//because mouseout function doesn't work so well
+var foo;
+var bar;	  
+var xlocale = 0; 
+var ylocale = 0;
+var studiespage;
+
+function movehandler(evt){
+	xlocale = evt.pageX;
+	ylocale = evt.pageY;
+	return true;
+}
+
+function uphandler(evt){
+	clearInterval(bar);
+}
+var widthofpage = window.innerHeight; 
+var heightofpage = window.innerWidth;
+function NSrefresh(){
+	if ((navigator.appName=="Netscape")&&(parseInt(navigator.appVersion)==4)) {
+		if ((window.innerHeight !=widthofpage) || (window.innerWidth != heightofpage)){
+			location.reload();
+			widthofpage = window.innerHeight;
+			heightofpage = window.innerWidth;
+		}
+	}
+}
+
+
+function ScrollDiv(divname, wintop, textheight, upordown, scrollamount){
+	if (document.layers){
+		var divtop = document.layers[divname].top;
+		var divbottom = divtop + textheight;
+		if ((upordown == "up") && (divtop<=wintop)){
+			if ((document.layers[divname].top + scrollamount)<=wintop)
+				{document.layers[divname].top += scrollamount; }
+			else {document.layers[divname].top = wintop; }	
+			return false;
+		}
+		else if ((upordown == "down") && (divtop + textheight > winbottom)){
+			if ((document.layers[divname].top + textheight - scrollamount)>=winbottom){
+				document.layers[divname].top -= scrollamount;
+			}	
+			else {
+				document.layers[divname].top = winbottom-textheight;
+			}
+			return false;
+		}
+			}
+	else if (document.all){
+		var divtop = boxtopy;
+		if ((upordown == "up") && (divtop<wintop)){
+			if((boxtopy + scrollamount)<=wintop){
+				boxtopy +=scrollamount;
+			}
+			else{
+				boxtopy = wintop;
+			}
+			document.all[divname].style.top = boxtopy;
+			
+			return false;
+		}
+		else if ((upordown == "down") && (divtop + textheight > winbottom)){
+			if ((boxtopy + textheight - scrollamount)>=winbottom){
+				boxtopy -=scrollamount;
+			}
+			else{
+				boxtopy = winbottom-textheight;
+			}
+				document.all[divname].style.top = boxtopy;		
+				if (MacIE5) {
+					LayerOff(divname); LayerOn(divname);	
+				}
+			return false;
+		}
+	}
+
+}
+
+function SimpleRollOn(divid, imageid, imagename){
+	if (document.layers) {
+		document.layers[divid].document.images[imageid].src = eval(imagename+".src");
+	}
+	else if (document.all) {
+	document.images[imageid].src = eval(imagename+".src");
+	}
+}
+
+function SimpleRollOff(divid, imageid, imagename){
+	if (document.layers) {
+	document.layers[divid].document.images[imageid].src = eval(imagename+".src");
+	}
+	else if (document.all) {
+	document.images[imageid].src = eval(imagename+".src");
+	}
+
+}
+
+function SwapImageOn(sectionname){
+	if ((sectionname != pagename) || (caseStudy == 1)) {
+		if (document.layers) {document.layers[sectionname+"nav"].zIndex = 80;
+		document.layers[sectionname+"nav"].document.images[sectionname+"main"].src = eval(sectionname + "_roll.src");
+		}
+		else {document.images[(sectionname+"main")].src=eval(sectionname+"_roll.src");
+			eval(sectionname+"nav").style.zIndex = 80;
+		}
+		
+	}
+	lastchosen=sectionname;
+	
+}
+
+function SwapImageOff(sectionname){
+	if ((sectionname != pagename) || (caseStudy == 1)) {
+		if (document.layers) {
+		document.layers[sectionname+"nav"].document.images[sectionname+"main"].src = eval(sectionname + ".src");
+		document.layers[sectionname+"nav"].zIndex = 75;
+		}
+		else {
+		document.images[(sectionname+"main")].src=eval(sectionname+".src");
+		eval(sectionname+"nav").style.zIndex = 75;
+		}
+	}
+}
+
+
+function LayerOn(layername){
+	if (document.layers){
+		document.layers[layername].visibility="visible";
+	}
+	else if (document.all){
+		eval(layername).style.visibility="visible";
+	}
+
+}
+
+function LayerOff(layername){
+	if (document.layers){
+		document.layers[layername].visibility="hidden";
+	}
+	else if (document.all){
+		eval(layername).style.visibility="hidden";
+	}
+}
+
+function scrollTextDown( a, b, c, d ) {
+	
+	var direction = ( d == 1 )? "down" : "up";
+	
+	var textnum = "text" + a;
+	var scrollamount = 5;
+	ScrollDiv( textnum, b, c, direction, scrollamount );
+	if (textnum != "text2"){caratup(textnum);}
+	else {caratupbio('2')}
+	return false;
+}
+
+
+
+function caratup(textnum){
+
+	if (document.layers){
+		var divtop = document.layers[textnum].top;
+	}
+	else if (document.all){
+		var divtop = boxtopy;
+	}
+
+	var amountscrolled = (wintop-divtop);
+	var percentscroll = amountscrolled/availablescroll;
+	var percentofbar = parseInt(lengthofbar * percentscroll);
+	currentlocale = bartop + percentofbar;
+	currentlocale = parseInt(currentlocale+"",10);
+	if (currentlocale+"" == 'NaN'){
+		currentlocale = bartop;
+	}
+	if (document.layers) {
+		document.layers["carat"].top = currentlocale;	
+	}
+	else if (document.all) {
+		document.all["carat"].style.top = currentlocale;
+	}
+}
+
+function caratclick(a){//a: the number of the text div (eg text1) 
+var clickspot;
+	if (document.layers) {clickspot=ylocale;}
+	else if (document.all) {clickspot=event.clientY;}
+	if (clickspot < currentlocale){
+		var textnum = "text" + a;
+		var scrollamount = windowarea;
+		ScrollDiv( textnum, wintop, textLength, "up", scrollamount );
+		if (textnum != '2'){caratup("text" + a);}
+		else {caratupbio('2')}
+	}
+	else if (clickspot > currentlocale){
+		var textnum = "text" + a;
+		var scrollamount = windowarea;
+		ScrollDiv( textnum, wintop, textLength, "down", scrollamount );
+		if (textnum != '2'){caratup(("text" + a));}
+		else {caratupbio('2');}
+	}
+}
+
+//end hide-->
+</SCRIPT>
+<SCRIPT language=JavaScript>
+<!--Hide from JS-challenged browsers
+
+var pagename = "capabilities";
+//Your options here are home, clients, capabilities, inside, press, or contact
+var scrollname="scrollpmfs"; //The name of the scroll div to call the Netscape event handlers
+var subsectionname = "sub0";
+var lastchosen  = pagename;
+var MacIE5 = 0;
+
+
+//preload images
+if (document.images){
+
+
+	var presssubnavy = (presssubnavy - 64);
+contact = new Image(118,16); contact.src="new/a_files/contact.gif";
+contact_roll = new Image(118,16); contact_roll.src="new/a_files/contact_roll.gif";
+	
+	
+overview = new Image(46,10); overview.src="new/a_files/overview.gif";
+overview_roll = new Image(46,10); overview_roll.src="new/a_files/overview_roll.gif";
+
+
+portfolio = new Image(46,10); portfolio.src="new/a_files/portfolio.gif";
+portfolio_roll = new Image(46,10); portfolio_roll.src="new/a_files/portfolio_roll.gif";
+
+
+services = new Image(141,10); services.src="new/a_files/services.gif";;
+services_roll = new Image(141,10); services_roll.src="new/a_files/services_roll.gif";
+
+
+forum = new Image(181,10); forum.src="new/a_files/forum.gif";
+forum_roll = new Image(181,10); forum_roll.src="new/a_files/forum_roll.gif";
+
+
+network = new Image(126,10); network.src="new/a_files/network.gif";
+network_roll = new Image(126,10); network_roll.src="new/a_files/network_roll.gif";
+
+
+contact2 = new Image(183,10); contact2.src="new/a_files/contact2.gif";
+contact2_roll = new Image(183,10); contact2_roll.src="new/a_files/contact2_roll.gif";
+
+
+about = new Image(89,10); about.src="new/a_files/about.gif";
+about_roll = new Image(89,10); about_roll.src="new/a_files/about_roll.gif";
+
+
+scr_arrow_up = new Image(19,13); scr_arrow_up.src="new/a_files/scr_arrow_up.gif";
+scr_arrow_up_roll = new Image(19,13); scr_arrow_up_roll.src="new/a_files/scr_arrow_up_roll.gif";
+scr_arrow_up_on = new Image(19,13); scr_arrow_up_on.src="new/a_files/scr_arrow_up_on.gif";
+scr_arrow_dn = new Image(19,13); scr_arrow_dn.src="new/a_files/scr_arrow_dn.gif";
+scr_arrow_dn_roll = new Image(19,13); scr_arrow_dn_roll.src="new/a_files/scr_arrow_dn_roll.gif";
+scr_arrow_dn_on = new Image(19,13); scr_arrow_dn_on.src="new/a_files/scr_arrow_dn_on.gif";
+
+}
+
+<!--SET VALUES FOR X AND Y COORDINATES OF NAVIGATION ELEMENTS-->
+
+//end hide-->
+</SCRIPT>
+<SCRIPT language=JavaScript>
+<!--Hide
+var winbottom = 406;
+if (!document.layers){var boxtopy = 194;}; //sets the y-coordinate for the scrolling text so that you can make it scroll
+var scrollname="scrollcaps";
+function downhandler(evt){
+if (document.layers[scrollname])
+{
+//on up arrow
+	if (((document.layers[scrollname].left < evt.pageX) && (evt.pageX < (document.layers[scrollname].left + document.layers[scrollname].document.images["scr_arrow_up"].width))) 
+	&& ((document.layers[scrollname].top<evt.pageY) && (evt.pageY<(document.layers[scrollname].top+document.layers[scrollname].document.images["scr_arrow_up"].height)))){
+	scrollTextDown(9, 191, 553, 0);
+	bar = setInterval("scrollTextDown( 9, 191, 553, 0)", 50 );
+	return false;
+	}
+//on down arrow	
+	else if (((document.layers[scrollname].left < evt.pageX) && (evt.pageX < (document.layers[scrollname].left + document.layers[scrollname].document.images["scr_arrow_dn"].width))) 
+	&& (((document.layers[scrollname].top+document.layers[scrollname].document.images["scr_arrow_up"].height+document.layers[scrollname].document.images["scr_spacer"].height)<evt.pageY) && (evt.pageY<(document.layers[scrollname].top+document.layers[scrollname].document.images["scr_arrow_up"].height+document.layers[scrollname].document.images["scr_spacer"].height+document.layers[scrollname].document.images["scr_arrow_dn"].height)))){
+	scrollTextDown(9, 191, 553, 1);
+	bar = setInterval("scrollTextDown( 9, 191, 453, 1)", 50 );
+	return false;
+	}
+}
+}
+//end hide-->
+</SCRIPT>
+<META forum="MSHTML 6.00.2600.0" name=GENERATOR>
+</HEAD>
+<BODY onresize=NSrefresh(); text=#000000 bottomMargin=0 vLink=#333333 
+aLink=#333333 link=#333333 bgColor=#4173a2 leftMargin=0 topMargin=0 
+onload="LayerOn('text9');" rightMargin=0>
+<!--SET UP MAIN BACKGROUND-->
+<DIV class=topbkgrd id=topbkgrd NAME="topbkgrd"> 
+  <TABLE height=98 cellSpacing=0 cellPadding=0 width="100%" border=0>
+    <TBODY> 
+    <TR vAlign=top align=left bgColor=#ffcc00> 
+      <TD align=left width="100%" colSpan=2 height=98><A 
+      href="index.php"><IMG height=98 
+      alt=anarckie hspace=0 src="new/a_files/logo.jpg" width=225 vspace=0 
+      border=0></A></TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<DIV class=bkgrd id=bkgrd NAME="bkgrd"> 
+  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+    <TBODY> 
+    <TR vAlign=top align=left bgColor=#ffffcc> 
+      <TD align=left width="100%" colSpan=2 height=1><IMG height=1 
+      src="new/a_files/topbg.gif" width=199 border=0></TD>
+    </TR>
+    <TR vAlign=top align=left bgColor=#ffcc00> 
+      <TD align=left width=131 bgColor=#4173a2><img height=544 
+      hspace=0 src="new/a_files/leftcol.jpg" width=131 border=0></TD>
+      <TD align=left width="100%" bgColor=#4173a2><IMG height=544 
+      hspace=0 src="new/a_files/rightcol.jpg" width=663 
+border=0></TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<DIV class=ylobkgrd id=ylobkgrd NAME="ylobkgrd"> 
+  <TABLE height=98 cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffcc00 
+border=0>
+    <TBODY> 
+    <TR bgColor=#ffcc00> 
+      <TD bgColor=#ffcc00><IMG height=98 src="new/a_files/spacer.gif" width=550 
+      border=0> </TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<!--END SET UP MAIN BACKGROUND-->
+<!--set up navigation items-->
+<DIV class=capabilitiesnav id=capabilitiesnav 
+NAME="capabilitiesnav"><A href="sdf"><IMG id=capabilitiesmain 
+height=16 alt=Capabilities src="new/a_files/capabilities.gif" width=135 border=0 
+name=capabilitiesmain></A></DIV>
+<DIV class=insidenav id=insidenav  NAME="insidenav"><A 
+href="sdf"><IMG id=insidemain 
+height=16 alt="ste" src="new/a_files/inside.gif" width=128 border=0 
+name=insidemain></A></DIV>
+<DIV class=pressnav id=pressnav NAME="pressnav"><A 
+href="hsdf"><IMG id=pressmain 
+height=16 alt="Pfer" src="new/a_files/press.gif" width=139 border=0 
+name=pressmain></A></DIV>
+<DIV class=contactnav id=contactnav  NAME="contactnav"><A 
+href="htsdf"><IMG id=contactmain 
+height=16 alt=dfgg src="new/a_files/contact.gif" width=118 border=0 
+name=contactmain></A></DIV>
+<!--End Placement of Navigation Items-->
+<!--START LEGAL STATEMENT DIV -->
+<DIV class=legal2 id=legal2 NAME="legal2" style="top: 528px; width: 246px; height: 9px"> 
+  <IMG height=10 alt=Capabilities src="new/a_files\copyright.gif" width=225> </DIV>
+<!--END LEGAL STATEMENT DIV -->
+<DIV class=header id=header name="header"><IMG height=31 alt="Welcome" 
+src="new/a_files\welcome.gif" width=171> <IMG 
+height=1 alt="" src="new/a_files/spacer.gif" width=1></DIV>
+<DIV class=menu id=menu NAME="menu"> 
+  <TABLE cellSpacing=0 cellPadding=0 width=214 border=0>
+    <TBODY> 
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A 
+      href="http://www.anarckie.com" ,><IMG height=10 alt=Overview src="new/a_files/overview_on.gif"
+      width=65 name=overview border=0></a></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A 
+      onmouseover="SimpleRollOn('menu','portfolio','portfolio_roll');" 
+      onmouseout="SimpleRollOff('menu','portfolio','portfolio');" 
+      href="portfolio.php" ,><IMG 
+      id=portfolio height=10 alt="Our Profile" src="new/a_files/portfolio.gif" 
+      width=65 border=0 name=portfolio></A></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A 
+      onmouseover="SimpleRollOn('menu','services','services_roll');" 
+      onmouseout="SimpleRollOff('menu','services','services');" 
+      href="Hosting_Signup_1.php" ,><IMG id=services 
+      height=10 alt="Our Services" 
+      src="new/a_files/services.gif" width=65 border=0 name=services></A></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A 
+      onmouseover="SimpleRollOn('menu','forum','forum_roll');" 
+      onmouseout="SimpleRollOff('menu','forum','forum');" 
+      href="forum.php" ,><IMG id=forum 
+      height=10 alt="View Forum" 
+      src="new/a_files/forum.gif" width=65 border=0 name=forum></A></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A 
+      onmouseover="SimpleRollOn('menu','network','network_roll');" 
+      onmouseout="SimpleRollOff('menu','network','network');" 
+      href="network.php" ,><IMG id=network 
+      height=10 alt="Jarvis Network" src="new/a_files/network.gif" 
+      width=65 border=0 name=network></A></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A 
+      onmouseover="SimpleRollOn('menu','contact2','contact2_roll');" 
+      onmouseout="SimpleRollOff('menu','contact2','contact2');" 
+      href="contact.php" ,><IMG id=contact2 
+      height=10 alt="Contact Us" 
+      src="new/a_files/contact2.gif" width=65 border=0 name=contact2></A></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=20 src="new/a_files/spacer.gif" width=1></TD>
+      <TD></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height=10 src="new/a_files/spacer.gif" width=14></TD>
+      <TD align=left><A onmouseover="SimpleRollOn('menu','about','about_roll');" 
+      onmouseout="SimpleRollOff('menu','about','about');" 
+      href="about.php" ,><IMG id=about 
+      height=10 alt="About Us" src="new/a_files/about.gif" width=65 border=0 
+      name=about></A></TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<SCRIPT language=JavaScript>
+<!--hide from browsers of different ability
+var bartop=202;
+var wintop=191;
+var lengthofbar=188;
+var textLength=553;
+var windowarea = winbottom-wintop;
+var availablescroll=textLength-windowarea;
+var currentlocale = bartop;
+
+if (textLength > windowarea)
+{
+document.write('<div name="scrollcaps" id="scrollcaps" class="scrollcaps">');
+document.write('            <table width="20" border="0" cellspacing="0" cellpadding="0">');
+document.write('              <tr> ');
+document.write('                <td><a href="javascript:/**/" onMouseOver="SimpleRollOn(\'scrollcaps\',\'scr_arrow_up\',\'scr_arrow_up_roll\');", onMouseOut="SimpleRollOff(\'scrollcaps\',\'scr_arrow_up\',\'scr_arrow_up\'); clearInterval(foo);" ');
+if (MacIE5){
+document.write(' onMouseDown="foo = setInterval( \'scrollTextDown( 9, wintop, 553, 0 )\', 1 ); return false;" ' );
+}
+else{
+document.write(' onMouseDown="foo = setInterval( \'scrollTextDown( 9, wintop, 553, 0 )\', 50 ); return false;" ' );
+}
+document.write(' onMouseUp="clearInterval(foo); return false;"><img src="new/a_files/scr_arrow_up.gif" width="20" height="15" name="scr_arrow_up" id="scr_arrow_up" border="0" ></a></td>');
+document.write('              </tr>');
+document.write('              <tr> ');
+if (document.layers) {
+document.write('                <td><a href="javascript: caratclick(\'9\');"><img src="new/a_files/scr_spacer.gif" onclick="caratclick(9);" name="scr_spacer" id="scr_spacer" border="0" width="20" height="190"></a></td>');
+}
+else if (document.all){
+document.write('                <td><img src="new/a_files/scr_spacer.gif" onclick="caratclick(9);" name="scr_spacer" id="scr_spacer" border="0" width="20" height="190"></td>');
+}
+//document.write('                <td><img src="new/a_files/scr_spacer.gif" name="scr_spacer" id="scr_spacer" width="20" height="190"></td>');
+document.write('              </tr>');
+document.write('              <tr> ');
+document.write('                <td><a href="javascript:/**/" onMouseOver="SimpleRollOn(\'scrollcaps\',\'scr_arrow_dn\',\'scr_arrow_dn_roll\');", onMouseOut="SimpleRollOff(\'scrollcaps\',\'scr_arrow_dn\',\'scr_arrow_dn\'); clearInterval(foo);" ');
+if (MacIE5){
+document.write('onMouseDown="foo = setInterval( \'scrollTextDown( 9, wintop, 553, 1 )\', 1 ); return false;" ' );
+}
+else{
+document.write('onMouseDown="foo = setInterval( \'scrollTextDown( 9, wintop, 553, 1 )\', 50 ); return false;" ' );
+}
+document.write('onMouseUp="clearInterval(foo); return false;"><img src="new/a_files/scr_arrow_dn.gif" width="20" height="15" name="scr_arrow_dn" id="scr_arrow_dn" border="0"></a></td>');
+document.write('              </tr>');
+document.write('			  </table>');
+document.write('</div>');
+document.write('<div name="carat" id="carat" class="carat">');
+document.write('<img src="new/a_files/carat.gif" height="6" width="20" name="caratimg" id="caratimg">');
+document.write('</div>');
+if (document.layers) {document.layers["carat"].top = bartop; document.layers["carat"].left = 758;
+}
+else if (document.all) {
+	document.all["carat"].style.top = bartop;
+	document.all['carat'].style.left = 758;
+}
+}
+//end hide-->
+</SCRIPT>
+<DIV class=text9 id=text9 NAME="text9"> 
+  <TABLE cellSpacing=0 cellPadding=3 width=376 border=0>
+    <TBODY> 
+    <TR> 
+      <TD align=left> 
+        <P>
+Welcome to anarckie.com<br>
+          <br>
+Anarckie.com offers multiple web-services to assists you with your online experience and development. We offer services ranging from hosting to downloads.<br><br><b>Virtual Hosting</b><br>
+All Packages Include:
+ <br><li>
+Webalizer Web Stats
+ Unlimited Autoresponders
+</li> <br><li>
+Front Page Extensions Optional
+ Unlimited E-mail Aliases
+</li> <br><li>
+Real Audio / Video
+ Unlimited E-mail Forwarders
+</li> <br><li>
+Password Protected Directories
+ CGI-BIN
+</li> <br><li>
+Shopping Cart
+ Control Panel (see demo)
+</li> <br><li>
+Pre-Configured CGI’s
+ Telnet / SSH
+</li> <br><li>
+Nightly Backup
+ PHP4
+</li> <br><li>
+Can use our SSL 
+ MySQL Connections=45
+</li> <br><li>
+Up to 10 Parked Domains to Main Account Domain
+</li> <br><li>
+<a href="Hosting_Signup_1.php"><b>SIGN UP NOW</b></a>
+ <br></li>
+
+
+
+</P>
+      </TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<DIV class=diagram id=diagram NAME="diagram"> 
+  <TABLE cellSpacing=0 cellPadding=0 width=479 border=0>
+    <TBODY> 
+    <TR> 
+      <TD><IMG height=1 src="new/a_files/spacer.gif" width=48 border=0><IMG height=27 src="new/a_files/clarify.gif" width=402 
+      border=0></TD>
+    </TR>
+    <TR> 
+      <TD colSpan=2> <IMG height=1 src="new/a_files/spacer.gif" width=206 border=0> 
+        <IMG height=21 alt=refine src="new/a_files/refine_on.gif" 
+      width=240 border=0></TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<DIV class=boxltcaps id=boxltcaps name="boxltcaps"><IMG height=220 
+src="new/a_files/spacer_white.gif" width=1 border=0></DIV>
+<DIV class=topmaskcaps id=topmaskcaps name="topmaskcaps"><IMG height=92 
+src="new/a_files/topmaskcaps.jpg" width=381 border=0></DIV>
+<DIV class=botmaskcaps id=botmaskcaps name="botmaskcaps"> 
+  <TABLE height="100%" cellSpacing=0 cellPadding=0 bgColor=#4173a2 border=0>
+    <TBODY> 
+    <TR> 
+      <TD vAlign=top><IMG height=121 src="new/a_files/botmaskcaps.jpg" width=381 
+      border=0></TD>
+    </TR>
+    <TR> 
+      <TD height="100%"><IMG height=10 src="new/a_files/spacer.gif" width=100 
+      border=0></TD>
+    </TR>
+    </TBODY> 
+  </TABLE>
+</DIV>
+<SCRIPT language=JavaScript>
+<!--hide from browsers of different ability
+if (document.layers) {
+	window.captureEvents(Event.MOUSEMOVE);
+	window.onmousemove=movehandler;
+
+	window.captureEvents(Event.MOUSEUP);
+	window.onmouseup=uphandler;
+
+	window.captureEvents(Event.MOUSEDOWN);
+	window.onmousedown=downhandler;
+}
+//end hide-->
+</SCRIPT>
+</BODY>
+</HTML>

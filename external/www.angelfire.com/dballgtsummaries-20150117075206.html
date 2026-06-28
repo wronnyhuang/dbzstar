@@ -1,0 +1,409 @@
+<script language="JavaScript"> <!--
+// No rightclick script v.2.5
+// (c) 1998 barts1000
+// barts1000@aol.com
+// Don't delete this header!
+
+var message="Thanks for trying you weakling!"; // Message for the alert box
+
+// Don't edit below!
+
+function click(e) {
+if (document.all) {
+if (event.button == 2) {
+alert(message);
+return false;
+}
+}
+if (document.layers) {
+if (e.which == 3) {
+alert(message);
+return false;
+}
+}
+}
+if (document.layers) {
+document.captureEvents(Event.MOUSEDOWN);
+}
+document.onmousedown=click;
+// --> </script>
+
+
+
+
+<body><!--'"</title></head>-->
+
+<script type="text/javascript">
+////// Compete /////////////////////
+__compete_code = '667f89f26d96c30e99728fe6a608804d';
+(function () {
+    var s = document.createElement('script'),
+        d = document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0],
+        t = 'https:' == document.location.protocol ? 
+            'https://c.compete.com/bootstrap/' : 
+            'http://c.compete.com/bootstrap/';
+    s.src = t + __compete_code + '/bootstrap.js';
+    s.type = 'text/javascript';
+    s.async = 'async'; 
+    if (d) { d.appendChild(s); }
+})();
+
+
+////// Quantcast  /////////////////////
+function channValidator(chann) {
+    return (typeof(chann) == 'string' && chann != '');
+}
+
+function lycosQuantcast(){
+    var lb = "";
+    if(typeof(cm_host) !== 'undefined' && channValidator(cm_host)){
+        lb += cm_host.split('.')[0] + '.';
+    }
+
+    if(typeof(cm_taxid) !== 'undefined' && channValidator(cm_taxid)){
+        lb += cm_taxid;
+        lb = lb.replace('/','');
+    } else {
+        lb = lb.replace('.','');
+    }
+    return lb;
+}
+
+var _qevents = _qevents || [];
+
+(function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" :"http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+    qacct:"p-6eQegedn62bSo",
+    labels:lycosQuantcast()
+});
+
+/////// Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21402695-21']);
+_gaq.push(['_setDomainName', 'angelfire.com']);
+_gaq.push(['_setCustomVar', 1, 'member_name', 'biz4/gokuandson', 3]);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+////// Lycos Initialization /////////////////////
+var lycos_ad = Array();
+var lycos_search_query = "";
+var lycos_onload_timer;
+
+var cm_role = "live";
+var cm_host = "angelfire.lycos.com";
+var cm_taxid = "/memberembedded";
+var angelfire_member_name = "biz4/gokuandson";
+var angelfire_member_page = "biz4/gokuandson/dballgtsummaries.html";
+var angelfire_ratings_hash = "1421481099:0f11abfc7c8f87f26836b34fa58286bb";
+
+var lycos_ad_category = null;
+
+var lycos_ad_remote_addr = "37.187.8.165";
+var lycos_ad_www_server = "www.angelfire.lycos.com";
+var edit_site_url = "www.angelfire.lycos.com/landing/landing.tmpl?utm_source=house&utm_medium=landingpage&utm_campaign=toolbarlink";
+
+////// Criteo /////////////////////
+var cto_conf = { a:true, i: "294", c:"img", kw: "" } ;
+(function (){
+    var c = document.createElement("script"); c.type = "text/javascript"; c.async = true;
+    c.src = "http://www.angelfire.com/adm/js/partner/criteo_ld_kw.js";
+    var s = document.getElementsByTagName("body")[0]; s.appendChild(c);
+})(); 
+
+</script>
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+<script type="text/javascript">
+(function(isV) {
+    if (!isV) {
+        return;
+    }
+
+    //this.lycos_search_query = lycos_get_search_referrer();
+    var adMgr = new AdManager();
+    var lycos_prod_set = adMgr.chooseProductSet();
+    var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2","slider"];
+    var adCat = this.lycos_ad_category;
+    adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+
+    if (this.lycos_search_query) {
+        adMgr.setForcedParam("keyword", this.lycos_search_query);
+    } 
+    else if (adCat && adCat.find_what) {
+        adMgr.setForcedParam('keyword', adCat.find_what);
+    }
+
+    for (var s in slots) {
+        var slot = slots[s];
+        if (adMgr.isSlotAvailable(slot)) {
+            this.lycos_ad[slot] = adMgr.getSlot(slot);
+        }
+    }
+
+
+    adMgr.renderHeader();
+    adMgr.renderFooter();
+}((function() {
+    var w = 0, h = 0, minimumThreshold = 300;
+    if (top == self) {
+        return true;
+    }
+
+    if (typeof(window.innerWidth) == 'number' ) {
+        w = window.innerWidth;
+        h = window.innerHeight;
+    }
+    else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        w = document.documentElement.clientWidth;
+        h = document.documentElement.clientHeight;
+    }
+    else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        w = document.body.clientWidth;
+        h = document.body.clientHeight;
+    }
+
+    return ((w > minimumThreshold) && (h > minimumThreshold));
+}())));
+
+
+
+window.onload = function() {
+    var f = document.getElementById("lycosFooterAd");
+    var b = document.getElementsByTagName("body")[0];
+    b.appendChild(f);
+    f.style.display = "block";
+    document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+
+    // Slider Injection
+    (function() {
+        var e = document.createElement('iframe');
+        e.style.border = '0';
+        e.style.margin = 0;
+        e.style.display = 'block';
+        e.style.cssFloat = 'right';
+        e.style.height = '254px';
+        e.style.overflow = 'hidden';
+        e.style.padding = 0;
+        e.style.width = '300px';
+    })();
+
+
+    // Bottom Ad Injection
+    ( function() {
+        var b = document.getElementsByTagName("body")[0];
+
+        var iif = document.createElement('iframe');
+        iif.style.border = '0';
+        iif.style.margin = 0;
+        iif.style.display = 'block';
+        iif.style.cssFloat = 'right';
+        iif.style.height = '254px';
+        iif.style.overflow = 'hidden';
+        iif.style.padding = 0;
+        iif.style.width = '300px';
+        iif.src = '/adm/ad/injectAd.iframe.html';
+        
+        var cdiv = document.createElement('div');
+        cdiv.style = "width:300px;margin:10px auto;";
+        cdiv.appendChild( iif );
+        if( b )
+        {
+            b.insertBefore(cdiv, b.lastChild);
+        }
+    })();
+
+}
+
+
+</script>
+
+<style>
+	#body .adCenterClass{margin:0 auto}
+</style>
+
+<div style="background:#abe6f6; border-bottom:1px solid #507a87; position:relative; z-index:9999999">
+    <div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+        <a href="http://www.angelfire.lycos.com/" title="Angelfire.com: build your free website today!" style="display:block; float:left; width:186px; border:0">
+        <img src="/adm/ad/angelfire-freeAd.jpg" alt="Site hosted by Angelfire.com: Build your free website today!" style="display:block; border:0" />
+        </a>
+        <script type="text/javascript">document.write(lycos_ad['leaderboard']);</script>
+    </div>
+</div>
+
+<!-- ///////////////////////////////////// -->
+<script type="text/javascript">document.write(lycos_ad['slider']);</script>
+
+
+<div id="lycosFooterAd" style="background:#abe6f6; border-top:1px solid #507a87; clear:both; display:none; position:relative; z-index:9999999">
+<div class="adCenterClass" style="display:block!important; overflow:hidden; width:936px;">
+	<div id="aflinksholder" style="float:left; width:186px;">
+        <a href="http://www.angelfire.lycos.com/" title="Angelfire.com: build your free website today!" style="display:block; border:0">
+            <img src="/adm/ad/angelfire-freeAd2.jpg" alt="Site hosted by Angelfire.com: Build your free website today!" style="display:block; border:0" />
+        </a>
+        <div style="text-align:center">
+        	<span style="color:#393939!important; font-size:12px!important; position:relative; top:-6px">
+            	Sponsored by
+            </span>
+            
+            <a href="http://www.listen.com/disty/index.jsp?from=lycos" target="_blank">
+                <img src="http://af.lygo.com/d/toolbar/sponsors/rhapsody_logo.jpg" alt="sponsor logo" title="Rhapsody"/>
+            </a>
+        </div>
+    </div>
+    <iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+</div>
+</div>
+
+<noscript>
+<img src="http://www.angelfire.com/doc/images/track/ot_noscript.gif?rand=620876" alt="" width="1" height="1" />
+<!-- BEGIN STANDARD TAG - 728 x 90 - Lycos - Angelfire Fallthrough - DO NOT MODIFY -->
+<iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="90" src="http://ad.yieldmanager.com/st?ad_type=iframe&amp;ad_size=728x90&amp;section=280303"></iframe>
+<!-- END TAG -->
+</noscript>
+
+<!-- Start Ybrant tracker -->
+<img src="http://ad.yieldmanager.com/pixel?id=1901600&t=2" width="1" height="1" />
+<!--   End Ybrant tracker -->
+
+<!-- Start Datonics -->
+<script type="text/javascript" src="http://ads.pro-market.net/ads/scripts/site-132783.js"></script>
+<!--   End Datonics -->
+
+<!-- Start Chango -->
+<script type="text/javascript">
+    var __cho__ = {"pid":1694};
+    (function() {
+        var c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.async = true;
+        c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(c, s);
+    })();
+</script>
+<!--   End Chango -->
+<title>Dragon Ball GT Summaries</title><center>
+
+<table border>
+<tr><td colspace=2> <h1>Dragon Ball GT</tr>
+</table></h1></center><p></body>
+
+<blockquote>The Baby Series 
+
+Baby's Revenge... 
+
+Here, we enter the first series of Dragonball GT... 
+
+Ten years passed since the end of Dragonball Z. Ubuu trains with Gokou. Goten and Trunks are adults. Pan is 14 years old. Satan is balding. Klilyn has a mustache and gray hair. Since the defeat of evil Boo, there was peace on earth... 
+
+Pilaf has finally gathered all the Dragon Balls to wish for world domination. Shenlong is summoned. Without notice, Gokou enters the scene. Pilaf, surprised to see Gokou after all these years, starts to wish that Gokou was still a kid so that he could be easier to defeat. Shenlong takes this for the wish and turns Gokou back into a kid. Pilaf runs off and is never seen again. 
+
+Gokou returns to his house and tells everyone what happened. Popo appears and tells Gokou that the Black Star Dragon Balls are scattered in space. Gokou decides to find these Dragon Balls to restore himself to his normal form. (The Dragon Balls of the Earth can only be used to grant wishes once a year.) More surprisingly, Popo tells that these Dragon Balls must be gathered within a year or the Earth will explode! Gokou and Trunks get on a space capsule to set voyage on their new quest. Pan sneaks aboard the capsule and accidently damages an engine. 
+
+The space capsule crashes into many planets. In these planets, our heroes acquire the Black Star Dragon Balls and meet a cast of minor characters. (It was these boring scenes that made people hate Dragon Ball GT at first.) During these scenes, Gokou and Trunks enter their Super Saiyan form for the first time in Dragon Ball GT to battle the minor villains. Pan also fights, but spends most of her time watching the Super Saiyans in amazement. In addition, our heroes meet Gill, a little robot who swallowed the Dragon Ball radar. As a result, our heroes take him on their journey because he acts like a live Dragon Radar. 
+
+Our heroes land on Dr. Myuu's planet. Dr. Myuu is an evil scientist who creates a bunch of cyborgs and robots. Gill is one of his creations. Trunks is kidnapped. Pan tries to rescue Trunks while Gokou fights Ruudo, a creation of Dr. Myuu. Ruudo is killed. Gill helps Trunks and Pan escape and our crew returns to space. 
+
+One of Dr. Myuu's projects is Baby. Baby is the only surviving Tsufuru-jin. Planet Plant, his native planet, was destroyed by the Saiyans back when the Saiyans worked as mercenaries for Freeza. As the only survivor, Baby wants revenge on all Saiyans, innocent or guilty. Dr. Myuu found Baby in space and saved him. Baby has the power to take over bodies and acquire his victims' power. Baby takes over Dr. Myuu's body and kills him. 
+
+Gokou, Trunks, Pan, and Gill finally return to Earth with all seven Black Star Dragon Balls. Gokou takes them to Popo to secure them for later use. However, Baby also lands on Earth. Slowly, he takes over the bodies of Trunks, Gohan, and Goten. Even when he leaves their bodies, an egg is left in their brain. This egg makes its victim a zombie of Baby. (When Gohan was Gohan-Bebi, he fought and injured Piccolo with a fireball.) Baby finally finds a body that satisfies him- Vegeta's! Vegeta's body is taken over and Vegeta-Bebi is formed! Soon, everyone on Earth become zombies of Baby except Satan, Pan, Boo, Ubuu, and Gokou. Popo, also a victim of Baby, uses the Black Star Dragonballs to creat another Planet Plant for Baby. 
+
+(By this time, Dragonball GT begans to get interesting and unsatified fans began to take up interest in this sequel series to Dragonball Z.) Ubuu faces Vegeta-Bebi and is defeated. Fat Boo joins the battle and is killed. Boo's body is near Ubuu and his spirit enters Ubuu. The two fuse and Ubuu learns that he and Boo were originally one. However, even with this fusion, Ubuu is no match for Vegeta-Bebi. 
+
+Gokou faces Vegeta-Bebi. Vegeta-Bebi is stronger and easily defeats the young Gokou. Gokou powers up to Super Saiyan level 3, but is still defeated; Vegeta-Bebi can also power up to level 3. Pan hides in the background and watches the fight. The defeated Gokou is pulled out of the fight by Kaiou-shin. On Kaiou-shin's planet, the Kaiou-shin inhabitantsubstances are creating a formula that will make Gokou's tail grow back. (The tail is the main source of power for a Saiyan.) Gokou's tail is only partially grown. Kaiou-shin pulls it to make it reach normal length. 
+
+Gokou returns to Planet Plant to face Vegeta-Bebi. After getting beaten by Vegeta-Bebi again, Gokou lies on the ground and stares at the Earth. The "full-Earth" acts as a full-moon. As a result, Gokou reaches Oozaru (weremonkey) stage and becomes a giant golden ape. (The ape is gold instead of brown because it was the Earth that caused the transformation instead of the moon). Gokou is a lot stronger, but is unable to control his body in Oozaru stage and trashes everything in sight. Another change occurs. Gokou acquires control over his body and enters another stage beyond Oozaru. He powers up and becomes Super Gokou 4. The tide of the battle is turned and Vegeta-Bebi is losing. The zombie Bulma creates a special magnifying glass for her husband. It magnifies the rays of the full-Earth and Vegeta-Bebi enters Oozaru stage. 
+
+Gokou gets defeated once again. Meanwhile, Kaiou-shin resolves that Chou-sui water could cleanse people from Baby's control. He goes to Sky Palace to get the Chou-sui water. Dende and Popo are cleansed in the struggle against Kaiou-shin. This water is spread to everyone. Gohan, Goten, Trunks, (now free from Baby's control) and Pan surround Gokou and form a circle. Their energy is donated to Gokou. Gokou and Vegeta-Bebi face each other again. Gokou does a Kamehameha fireball and defeats Vegeta-Bebi. Baby leaves Vegeta's body and runs to a space capsule to escape, but is killed. 
+
+The Earth is about to explode because the Black Star Dragon Balls weren't used to wish for the Earth's stability. Our heroes fly all the inhabitants to Planet Plant. Piccolo decides to stay on Earth to die with it because he loved it. The Earth explodes, and Piccolo goes with it. The Namek Dragon Balls are gathered and the Earth is restored from the wish, but Piccolo is still dead. However, one thing is learned- Gokou reached a new stage as Super Saiyan... 
+
+Notes: 
+
+•Super Gokou 4 level is not the same as Super Saiyan 4 level. Super Saiyan level is characterized by the golden hair. Super Gokou 4 level is what resulted in the powerup from Oozaru (giant ape) form. 
+  
+
+The Evil Shenlon Series 
+
+Cursed Dragon Balls and Wishes... 
+
+Here, we discover what was to become of the Dragon Balls and the Earth as a whole... 
+
+In hell, Dr. Gero and Dr. Myuu team up and create Android Artificial 17. They open a portal to go back into the land of the living and escape to Earth. Artificial 17 seeks Android 17 and they fuse into Super 17. Cell and Freeza have also been upgraded by the scientists and plan to take over hell. Gokou falls for the plot and gets tricked into going to hell to fight Cell and Freeza. Without Gokou on Earth, our heroes don't stand a chance against Super 17. During battle, Dr. Gero is held hostage. With Dr. Myuu's command, Super 17 kills Dr. Gero anyway. Later, Dr. Myuu is also betrayed and is killed. Meanwhile, Krillin and Android 18 have also perished in battle and Nappa has escaped from Hell and Vegeta kills him again. Gokou defeats Cell and Freeza, but is stuck in hell. Piccolo, who is in heaven, causes chaos in order to be sent to hell where he can help Gokou go back to Earth. With a Namek trick, Piccolo and Dende create a portal that allows Gokou to enter back to Earth. A battle between Gokou and Super 17 follows, and Super 17 is killed. 
+
+The Dragon Balls are gathered to bring Krillin and Android 18 back to life. When Shenlon (dragon of the Dragon Balls) is summoned, but something is wrong. An evil Shenlon appears and laughs wickedly. Our heroes learn that the Dragon Balls have cracked due to the negative energy that was stored inside the balls when negative wishes were made. A cloud appears around the evil Shenlon, and it transforms into seven evil dragons, each of a Dragon Ball. The dragons fly off in different directions and wreck chaos. Each dragon has its own element. When it finds that element, it will take on its true form. 
+
+Gokou and Pan fly off to fight these dragons. First, they encounter Ryan-Shenlon. Ryan-Shelon tells them that he was born when Bora was wished back to life. This dragon of the 2 star Dragon Ball is of water pollution. He is tricked into swimming in clean water and is weakened by this action, Gokou and Pan attack and kill him. The 2 star Dragon Ball is restored. 
+
+Next, Gokou and Pan follow the dragon radar's signal and encounter Uu-Shenlon. It was born in the 5 star Dragon Ball when Gokou was wished back to life to fight Raditz. This dragon of electricity is weakened in rain and destroyed in its weakened state. The 5 star Dragon Ball is recovered. 
+
+Ryuu-Shenlon is the next to appear. This dragon was born when Oolong made the wish for women's underwear while fleeing from Pilaf. This dragon possesses the power of hurricanes. Gokou learns of it's weakness and attacks it on the head. Ryuu-Shenlong is easily defeated and the 6 star Dragon Ball is restored. 
+
+Following this, Gokou and Pan fly to Chii-Shenlon, which was born in the 7 star Dragon Ball when all the people killed by Majin- Vegeta were wished back to life. Pan gets tricked and becomes trapped in the dragon's body. Gokou rescues her and destroys Chii-Shenlon. Another dragonball is recovered. 
+
+Suu-Shenlon is next for Gokou and Pan to encounter. It was born when Piccolo was wished back to life. This dragon of the sun is associated with the 4 star Dragon Ball. It challenges Gokou in a match and the two fight. All of a sudden, San-Shenlon, Suu-Shenlon's brother and of the 3 star Dragon Ball, appears. After getting mocked by his brother for losing honor in interfering with the match, the dragon of ice fights Gokou anyway. It is slayed in battle, and Gokou and Suu-Shenlon continue their match. Gokou admires Suu-Shenlon's sense of honor. 
+
+The match becomes interfered again when another third party kills Suu-Shenlong. This party is Li-Shenlon, of the 1 star Dragon Ball. Gokou defeats it in Super Gokou 4 stage, but the dragon survives. It defeat s Pan and steals all the restored Dragon Balls. Li-Shenlon fuses with the balls and powers up. Super Gokou 4 is no match for it in its fused state. 
+
+Bulma creates a Brute Ray that allowed Vegeta to go Super level 4, and Super Vegeta 4 joins Gokou in battle. The two are still no match for Li-Shenlon. Another stategy is used: Super Gokou 4 and Super Vegeta 4 fuse and become Super Gozita 4! Li-Shenlon is kicked around and the Dragon Balls it fused with are restored, but the fusion of Super Gozita 4 wears off before Li-Shenlon is killed. Li-Shenlon fuses with the Dragon Balls once again, but Gokou gets to the 4 star Dragon Ball before Li-Shenlon can and swallows it so that the dragon can't fuse with it. Eventually, Gokou spits the Dragon Balls back out and Li-Shenlon absorbs it. Vegeta suggests to use fusion again, but Gokou is too weak to go Super level 4. Therefore, he remains in his small size; he cannot fuse with Vegeta in this state due to size differences. Li-Shenlon boasts to kill Gokou and Vegeta. 
+
+One last chance of hope remains. Gokou begins to create a Genki-Dama. Everyone on Earth raises their hands to donate energy to Gokou. Gokou teleports to Kaiou and tells them that the energy is not enough. The Kaious agree to help seek life forms across the galaxy to help donate energy to Gokou. All the characters encountered in space in the Baby Series are shown again and they raise their hands. Gokou's giant Genki-Dama is created and it destroys Li-Shenlon. 
+
+All the Dragon Balls are restored to normal, but something is wrong. Shenlon appears without being summoned and tells that he will not make any more wishes because of all the trouble the Dragon Balls have caused. Gokou convinces it to make the final wish of restoring all the civilians killed during the fights against the dragons. The wish is granted, and Gokou is told to ride on Shenlon's back. Gokou does so. Chi-Chi and her sons go home to prepare a big feast while awaiting Gokou's return, unaware what's going on. Pan notices Gokou's tattered clothes on the ground and asks if her granpa is gone for good. Vegeta replies that he is. On the dragon's back, Gokou visits the Z warriors. At the end, Gokou lies down and the Dragon Balls are absorbed into Gokou and Gokou disappears. Shenlon coils up and flies at the camera. The screen turns white. 
+
+It is now 100 years later. Gokou Jr. (Pan's grandson) is at the latest Boudaikai Tenkaichi tournament. He is about to compete against Vegeta Jr., one of Vegeta's descendant. The two boys go to Super Saiyan level and fight. Pan is a spectator in the audience. She notices adult Gokou watching the fight at the other side of the stadium. Pan goes to him, but loses her grandfather in the crowd. Gokou walks away, and highlights of Dragonball-Z-GT are shown. 
+
+DragonBall comes to an end. "Goodbye, Gokou... 'Till the Day We Meet Again" 
+
+Notes: 
+
+•Gokou Jr. is the same character who appeared in the TV special on March 25, 1997. 
+
+•When Gokou is riding on Shenlon, he visits Yamcha, Puar, Tenshin-han, Chauzu, Krillin, Master Roshi, and Piccolo. 
+
+•The fights against Super 17 was considered part of the battles involved w ith the Evil Shenlons. This is why Krillin and Android 18 were restored in the final wish granted by Shenlon. 
+</blockquote><script language=javascript1.1 
+src="http://files.cometsystems.com/javascript/autoregion_inc.js"></script>
+
+
+<object id="Cursor" width=1 height=1 
+classid="CLSID:1678F7E1-C422-11D0-AD7D-00400515CAAA"
+    
+codebase="http://files.cometsystems.com/cometcursor/comet.cab#Version=1,2,0,151">
+    <param name="Key" 
+value="02204cfcfd9e9591f237fdd467b277e01e771a1c480bef-0001b2-livecursors.com">
+    <param name="Normal" 
+value="http://www.livecursors.com/cursors/lcar01.cu_">
+    <param name="Hyperlink" 
+value="http://www.livecursors.com/cursors/lcar01h.cu_">
+    <param name="Ibeam" 
+value="http://www.livecursors.com/cursors/lcar01.cu_">
+
+        <script language=javascript1.1>
+    <!--
+    function isError() {return true;}
+    if (navigator.userAgent.toLowerCase().indexOf('mac')==-1) {
+    window.onerror=isError;
+    NSEmbed('type="application/x-comet" '+
+'Key="02204cfcfd9e9591f237fdd467b277e01e771a1c480bef-0001b2-livecursors.com" 
+'+
+'Normal="http://www.livecursors.com/cursors/lcar01.cu_" '+
+'Hyperlink="http://www.livecursors.com/cursors/lcar01h.cu_" '+
+'Ibeam="http://www.livecursors.com/cursors/lcar01.cu_"');
+    } //-->
+        </script>
+
+
