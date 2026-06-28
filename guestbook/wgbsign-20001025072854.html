@@ -1,0 +1,747 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- [ START ] guestbook context -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+
+
+
+
+
+
+
+
+
+<!-- [ END ] guestbook context -->
+
+
+
+<!-- [ START ] guestworld properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- [ END ] guestworld properties -->
+
+
+
+<!-- [ START ] count guestbook sign preview -->
+
+
+
+
+<!-- [ END ] count guestbook sign preview -->
+
+
+
+<!-- [ START ] viewcount other stuff -->
+
+<!-- [ END ] viewcount other stuff  -->
+
+
+
+
+
+
+
+
+
+
+
+<html><head><title>Sign The Guestbook</title>
+
+<!-- INSTRUCTIONS FOR USING THIS FORM ON YOUR SERVER
+This form can be used from your own homepage if you wish to modify
+the way it looks! Here's how...
+Save it to the server where your homepage
+is located and call it "wgbsign.html", for example.
+
+Then modify the "Sign my guestbook" link on your homepage from
+<a href="http://neptune.guestworld.com/wgb/wgbsign.dbm?owner=DBZstar">Sign My Guestbook</a>
+to
+<a href="wgbsign.html">Sign My Guestbook</a>
+
+You can modify the look of this form but don't change the "form" tag
+or any of the input fields.(See the deluxe guestbook if you want to
+get crazy with it.)
+
+Note: You cannot add more fields to the list. It won't work!
+      See our deluxe guestbook server for such a thing at
+      http://neptune.guestworld.com/deluxe.start.dbm
+
+You can also change the "_required" input fields below to give people
+a message if they do not fill out certain fields properly, or at all.
+
+GOOD LUCK AND HAVE FUN WITH IT. USING THIS FORM ON YOUR SERVER WILL
+ENABLE YOU TO HAVE THIS PAGE MATCH YOUR SITE PERFECTLY!!
+
+END OF INSTRUCTIONS!!!!!
+-->
+
+<!-- LiveFORM Block Begin -->
+<!--
+This form uses LiveFORM technology (http://www.patils.com/liveform.htm).
+LiveFORM technology and JavaScript routines used in this file are licensed
+for use on a single server.
+Copyright (C) 1996, 1998. Patil Systems, Inc. All rights reserved.
+Patent Pending.
+-->
+<script language="JavaScript">
+
+var BName = navigator.appName;
+var BVer = parseInt(navigator.appVersion);
+var version;
+var os ;
+var newwin;
+var ebhnd ;
+var status = 0;
+var ebhelphtm = "http://www.patils.com/cardinfo.htm"
+
+var gt = unescape('%3e');
+var inform = 0 ;
+
+if (BName == "Netscape" && BVer >= 2) version = "n2";
+else if (BName == "Netscape" && BVer >= 3) version = "n3";
+else if (BName == "Netscape" && BVer >= 4) version = "n4";
+else if (BName == "Microsoft Internet Explorer" && BVer == 4) version = "ie4";
+
+if(navigator.appVersion.indexOf("Win") != -1 ) os = "Windows" ;
+else if(navigator.appVersion.indexOf("Macintosh") != -1 ) os = "Mac" ;
+else if(navigator.appVersion.indexOf("Solaris") != -1 ) os = "Solaris" ;
+else if(navigator.appVersion.indexOf("AOL") != -1 ) os = "AOL" ;
+else if(navigator.appVersion.indexOf("WebTV") != -1 ) os = "WebTV" ;
+else  os = "Other" ;
+
+var origaction;
+var origmethod;
+var ebhelphtm = "http://www.patils.com/cardinfo.htm"
+
+var gt = unescape('%3e');
+var inform = 0 ;
+var fname="";
+var lname="";
+var organization="";
+var address1="";
+var address2="";
+var city="";
+var state="";
+var zip="";
+var country="";
+var phone="";
+var fax="";
+var email="";
+var ccard="";
+var ccardexp="";
+var ccardnum="";
+
+if ( window.location.protocol == "file:")
+{
+alert("You made a mistake! You did not wait long enough so\n"
++ "an ebCARD could be created for you. You have saved \nthe form instead of "
++ "ebCARD on your computer!!"
++ "\n\nPlease carefully read the instructions for creating "
++ "ebCARD \nand try again.")
+
+}
+
+
+function setvalue(lval, rval)
+{
+    var cmd, evalcmd ;var ttype ;var newval;
+  if (eval("document.LiveFORM." + lval ) != null)
+    eval("document.LiveFORM." + lval + ".value" + " = unescape(rval)") ;
+    return 0 ;
+}
+
+function getvalue(lval)
+{
+  rval = "";
+  if (eval("document.LiveFORM." + lval ) != null)
+    rval =  (eval("document.LiveFORM." + lval + ".value" ));
+  return (rval);
+}
+
+function gethnd()
+{
+  return (window.document.LiveFORM);
+}
+
+function getprop(lval)
+{
+  rval =  eval(lval);
+  return (rval);
+}
+
+function ckfield(lval)
+{
+  if (eval("document.LiveFORM." + lval ) == null)
+  return 0;
+else
+  return 1;
+}
+
+function getsetval(lval)
+{
+  var st = opener.getvalue(lval) ;
+  if (opener.ckfield(lval) != 0)
+    eval('document.LiveFORM.' + lval + '.value  = st' );
+}
+
+function onld3()
+{
+
+   getsetval("fname");
+    getsetval("lname");
+    getsetval("address1");
+    getsetval("address2");
+    getsetval("city");
+    getsetval("state");
+    getsetval("zip");
+    getsetval("location");
+    getsetval("phone");
+    getsetval("fax");
+    getsetval("fullname");
+    getsetval("email");
+    getsetval("homepage");
+    getsetval("hometitle");
+    getsetval("organization");
+    getsetval("ccardtype");
+    getsetval("ccardexp");
+    getsetval("ccardnum");
+}
+
+function afterfill()
+{
+    inform = 1;
+}
+
+function createebcard()
+{
+  if ( window.location.protocol == "file:")
+  {
+    alert('You saved form instead of the ebCARD that was downloaded '
+    + '\nafter "Create ebCARD" was clicked. Go back to the form '
+    + '\nand read instructions carefully. It is not really hard.');
+
+    return 1;
+  }
+  return 0;
+}
+
+function samplefiller()
+{
+  fillerwin =  open("", "FillForm",
+    'resizable=yes,toolbar=no,location=yes,directories=no,status=no,'
+    + 'menubar=no,scrollbars=no,copyhistory=yes,width=400,height=400');
+  fillerwin.location.href = "http://www.patils.com/sampleeb.htm";
+}
+
+function filler3()
+{
+    var hottext = "ebCARD"
+    var eburl = ebhelphtm;
+    var uxeb = "" ;
+
+if(navigator.appVersion.indexOf("Win") != -1 )
+    {
+    if(navigator.appVersion.indexOf("AOL") != -1 )
+        fillerwin =  open("", "FillForm")
+    else
+        fillerwin =  open("", "FillForm",
+     'resizable=yes,toolbar=no,location=yes,directories=no,status=no,'
+     + 'menubar=yes,scrollbars=no,copyhistory=yes,width=400,height=400');
+        fillerwin.document.writeln("<html" + gt +
+        "<BODY" + gt);
+   fillerwin.document.writeln(
+   "Please manually load your previously stored <b" + gt
+   + "ebcard.htm</b" + gt +
+   " file in this window using File->Open file... menu");
+        fillerwin.document.writeln("<P" + gt + "<b" + gt + "OR</b" + gt +
+   "<p" + gt
+       + 'If this file does not exist <a href="eb3whol.html" target=new'
+   + gt + 'Create</a' + gt + ' your own' )
+fillerwin.document.writeln(
+'<a href="ebfaq.html" target=new' + gt
++ " ebCARD</a" + gt )
+        fillerwin.document.writeln(
+    "</body" + gt + "</html" + gt);
+        fillerwin.document.close();
+
+if ( navigator.appName.indexOf( "Netscape") != -1 )
+  if(navigator.appVersion.indexOf("4.04") != 0)
+        fillerwin.location.href = "file:///C|/ebcard.htm";
+    }
+    else
+   {
+        fillerwin =  open("", "FillForm",
+              'resizable=yes,menubar=yes,scrollbars=yes,width=200,height=260,location=yes');
+      fillerwin.document.writeln("<html" + gt
+        + "Load your ebCARD from file <b" + gt + "ebcard.htm</b" + gt
+        + " in this window.<p" + gt );
+uxeb = document.LiveFORM.fname.value;
+if (uxeb.length == 0 )
+{
+
+fillerwin.document.writeln( "To load ebcard.htm from the <b" + gt
++ "root directory</b" + gt + " click button.");
+fillerwin.document.writeln('<form name="loadform"' + gt
++ '<input type="button" name="loadbut" value="Load /ebcard.htm"');
+fillerwin.document.writeln('onClick=\'location.href="file:/ebcard.htm"\''
++ gt + '</form' + gt );
+
+}
+else
+{
+
+fillerwin.document.writeln( "To load " + uxeb +
+".htm relative to the root directory"
++ " click button.");
+fillerwin.document.writeln('<form name="loadform"' + gt
++ '<input type="button" name="loadbut" value="Load ' + uxeb + '.htm"');
+fillerwin.document.writeln('onClick=\'location.href="file:/' + uxeb +'.htm"\''
++ gt + '</form' + gt );
+}
+      fillerwin.document.writeln( " </html" + gt);
+      fillerwin.document.close();
+   }
+
+    if (fillerwin != null)
+   {
+        if (fillerwin.opener == null)
+            fillerwin.opener = self
+   }
+    return 0 ;
+}
+
+function help()
+{
+  if(navigator.appVersion.indexOf("Win") != -1 )
+  open("/creatmshlp.htm", "ebhelpwin",
+  "resizable=yes,scrollbars=yes,menubar=yes,width=400,height=360");
+  else
+  open("/creathlp.htm", "ebhelpwin",
+  "resizable=yes,scrollbars=yes,menubar=yes,width=400,height=360");
+}
+
+function operation(nam, val)
+{
+   this.name = nam
+   this.value = val
+}
+
+function ebSave()
+{
+    if (BName == "Netscape")
+    {
+   if (check_plugin() == 0 )
+       ebhnd = newwin.document.ebCARD
+   else
+   {
+       newwin.close();
+       return 1
+   }
+    }
+    else
+   ebhnd = newwin.ebCARD
+
+    for(i=0 ; document.LiveFORM.elements.length  > i ; i++)
+    {
+   if ((document.LiveFORM.elements[i].type.indexOf("text") != -1 ) ||
+       (document.LiveFORM.elements[i].type.indexOf("hidden") == 0) ||
+       (document.LiveFORM.elements[i].type.indexOf("password") == 0)
+      )
+   {
+       ebhnd.WriteKeyPair(document.LiveFORM.elements[i].name,
+       escape(document.LiveFORM.elements[i].value) )
+   }
+    }
+    newwin.close();
+    return 0
+}
+
+function ebFill()
+{
+    if (BName == "Netscape")
+    {
+   if (check_plugin()== 0)
+   ebhnd = newwin.document.ebCARD
+   else
+   {
+       newwin.close();
+       return 1;
+   }
+    }
+    else
+{
+   ebhnd = newwin.document.ebCARD
+}
+
+    for(i=0 ; document.LiveFORM.elements.length  > i ; i++)
+    {
+   if (
+   ((document.LiveFORM.elements[i].type.indexOf("text") != -1 ) ||
+   (document.LiveFORM.elements[i].type.indexOf("password") == 0)) &&
+   (document.LiveFORM.elements[i].type.indexOf("hidden") == -1 )
+   )
+   {
+   document.LiveFORM.elements[i].value =
+   unescape(ebhnd.ReadKeyValue(document.LiveFORM.elements[i].name))
+   }
+    }
+    newwin.close(); // temporary for IE bug fixing
+    return 0
+}
+
+function write_info()
+{
+   newwin.document.writeln ('<FONT SIZE=-1 FACE="Arial, Helvetica">'
++ '<font color="#0000FF">')
+   newwin.document.writeln('<b><a href="ebcardinfo.htm" target=_new>ebCARD</a><sup>TM</sup></b> '
++ 'helps you to automatically fill out')
+   newwin.document.writeln ('any form that bears ebCARD logo. ')
+   newwin.document.writeln ('Once you understand how ebCARD works, ')
+   newwin.document.writeln ('you can create your complete profile')
+   newwin.document.writeln (' by filling out this '
++ '<a href="http://www.patils.com/ebwhole.htm" target=_new>form</a>, once.')
+   newwin.document.writeln ('</font></font></font>')
+}
+
+function fill_form()
+{
+var Bver
+ if (BName == "Netscape")
+{
+  Bver = parseInt(navigator.appVersion);
+  if (Bver < 4 )
+  {
+  filler3()
+  return
+  }
+  if (check_plugin() != 0) return ;
+}
+
+   newwin =  open("ebfill.cfm", "FillForm",
+       'resizable=yes,toolbar=no,location=no,directories=no,status=no,'
+       + 'menubar=no,scrollbars=no,copyhistory=yes,width=260,height=200');
+   newwin.opener = window
+return
+}
+
+function save_eb()
+{
+var Bver
+ if (BName == "Netscape")
+Bver = parseInt(navigator.appVersion);
+if (Bver < 4 )
+{
+newwin =  open("eb3whol.cfm", "SaveEb",
+            'resizable=yes,toolbar=no,location=no,directories=no,status=no,'
+            + 'menubar=yes,scrollbars=yes,copyhistory=yes,width=600,height=430')
+return
+}
+ if (BName == "Netscape")
+   if (check_plugin() != 0) return ;
+
+   newwin =  open("ebsave.htm", "SaveForm",
+       'resizable=yes,toolbar=no,location=no,directories=no,status=no,'
+       + 'menubar=no,scrollbars=no,copyhistory=yes,width=260,height=200');
+return
+}
+
+function install_plugin()
+{
+inpluginwin =  open("", "InstallPlugin",
+    'resizable=yes,toolbar=no,location=no,directories=no,status=no,'
+    + 'menubar=yes,scrollbars=yes,copyhistory=yes,width=400,height=430');
+ inpluginwin.location.href = "plugin.htm";
+
+}
+
+function check_plugin()
+{
+    status = 0
+    mimetype = navigator.mimeTypes["application/x-ebcard-plugin"]
+    if (mimetype)
+    {
+   plugin = mimetype.enabledPlugin
+   if (!plugin)
+   {
+       alert("Mime type configured but plugin was removed.\n" )
+       install_plugin();
+       status = 1;
+   }
+    }
+    else
+    {
+   alert("ebCARD plugin not installed.\n" +
+   "Initiating plugin download process")
+   install_plugin();
+   status = 1
+    }
+    return status
+}
+
+function onld()
+{
+}
+
+function okprocess(thisform)
+{
+
+}
+
+function cancelprocess(thisform)
+{
+
+}
+
+function help()
+{
+  open("eb4creat.htm", "ebhelpwin",
+  "resizable=yes,scrollbars=yes,menubar=yes,width=400,height=360");
+}
+ebsaveoper = new operation("ebSave", "Save ebCARD");
+ebfilloper = new operation("ebFill", "Fill form");
+
+</script>
+
+<script language="Javascript">
+        <!--
+        // Copyright 1996 - Frank Ammermann (Frank@Ammermann.com)
+        // http://www.et-inf.fho-emden.de/~frank
+        // Feel free to "steal" this code provided that you leave the
+        // notice as is !!!!!
+
+        // Add this to your form tag:
+        // <form action="..." name=guestbook onSubmit="return validateForm()">
+
+        function deleteBlanks(str){
+        var foundBlank = 1;
+        var len;
+        len = str.length;
+        if (len == 0) return str;
+        while (foundBlank == 1)
+            {   var indx;
+                indx = str.indexOf(" ", 0);
+                if (indx == -1) {foundBlank =0;}
+                else {str= str.substring(0, indx) +
+                        str.substring(indx + 1, len);}}
+        return str;}
+
+        function validateForm() {
+
+        var localPost = deleteBlanks(document.LiveFORM.lfgbcomment.value.toLowerCase());
+
+        if (localPost=="")
+              {alert('A guest without a comment is like a ship without a sail!');
+                return false}
+        else if (localPost.indexOf("<form")!=-1)
+              {alert('No forms in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<script")!=-1)
+              {alert('No scripts in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<applet")!=-1)
+              {alert('No applets in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<title")!=-1)
+              {alert('No title-tag in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<body")!=-1)
+              {alert('No body-tag in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<object")!=-1)
+              {alert('No ActiveX in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<embed")!=-1)
+              {alert('No Sound in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<meta")!=-1)
+              {alert('No meta info in the comment, please !');
+               return false}
+        else if (localPost.indexOf("<bgsound")!=-1)
+              {alert('No Sound in the comment, please !');
+               return false}
+        else return true;}
+
+        // End of Script (c) Frank Ammermann (Frank@Ammermann.com)-->
+</script>
+</head>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+      <td align="center"><table border="0" cellpadding="0" cellspacing="2">
+            <tr>
+               <td align="center" width="468">
+                    </td></tr>
+            </table>
+              </td></tr>
+</table>
+<center><table border="0" cellpadding="3" cellspacing="4" width="96%">
+   <tr>
+      <td><A HREF="/"><IMG SRC="/common/images/gearlogolycos.gif" WIDTH="110" HEIGHT="61" BORDER="0" HSPACE="2" VSPACE="10"></A></td><td nowrap><A HREF="http://htmlgear.lycos.com/specs/book.html"><IMG SRC="/common/images/book.gif" ALT="guestbook" WIDTH="48" HEIGHT="32" BORDER="0" HSPACE="2" VSPACE="0"></a></td><td nowrap><font size="3" face="arial, helvetica, verdana, sans serif">&nbsp;<b>guestGEAR</b></font></td><td width="100%">&nbsp;</td></tr>
+      </table></center>
+<Font face="arial, helvetica, verdana, sans serif" color="333366" size="2"><b><center>Please Sign The Guestbook</center></b></font>
+<HR>
+<A HREF="JavaScript:fill_form()"><font face="helvetica, arial, verdana, sans serif" size="2"><b>For auto-fill use the <font face="helvetica, arial, verdana, sans serif" size="2" color="990000">ebCARD!</font></b>&nbsp;<IMG SRC="/wgb/images/ebsubmit.gif" border=0 alt="use  your ebCARD Now!"></A></U><br>
+<BR><p>
+
+<!-- Do not change these next lines -->
+<form method="post" name="LiveFORM"
+action="http://neptune.guestworld.com/wgb/wgb.dbm?owner=DBZstar">
+<input type="hidden" name="copyright"
+    value="Copyright (C) 1998 Patil Systems, Inc.">
+<input type="hidden" name="verno" value="1.7">
+
+<!-- Here you can add your own requirements for your guests   -->
+<!-- and a message if they do not add the fields you request. -->
+<!-- Please follow these standards:                                  -->
+<input type=hidden name="lfgbcomment_required" value="What's a guest without comments? :)">
+<input type=hidden name="title_required" value="What's a guest without a name? :)">
+
+<!-- Here are the rest of the basic fields -->
+<font face="helvetica, arial, verdana, sans serif" size="2">
+Name&nbsp;&nbsp;<input name="title" size=30 maxlength=60><p>
+E-mail Address&nbsp;&nbsp;<input name="email" size=30 maxlength=128 ><p>
+Homepage URL&nbsp;&nbsp;<input name="homepage" value="http://" size=30 maxlength=128><P>
+Title of your homepage&nbsp;&nbsp;<input name="hometitle" size=30 maxlength=128><P>
+Where are you from?&nbsp;&nbsp;<input name="country" size=30 maxlength=128 ><P>
+
+<!-- Here you can change the options for how your guests found your site -->
+How did you find us?&nbsp;&nbsp;
+<SELECT NAME="reference" >
+<OPTION selected>Just Surfed On In
+<OPTION>htmlGEAR
+<OPTION>Tripod
+<OPTION>Lycos
+<OPTION>AngelFire
+<OPTION>Geocities
+<OPTION>Yahoo!
+<OPTION>Xoom
+<OPTION>AOL
+<OPTION>Clicked on a 'Guestbooks by GuestWorld' Button
+<OPTION>Clicked on our Banner Advertisement
+<OPTION>From a Friend
+<OPTION>Net Search
+<OPTION>NewsGroups
+<OPTION>Signing another Guestbook
+<OPTION>Viewing another Guestbook
+<OPTION>SimpleNet
+</SELECT><p>
+
+<input name=private type=checkbox>Check here if you would like this
+to be a private message!<P>
+Comments:<br>
+<TEXTAREA NAME="lfgbcomment" COLS=60 ROWS=8></textarea><p>
+
+<input type="submit" value="Preview Entry">
+<input type="reset" value="Clear">
+</form>
+</body>
+
+</html>
+
+
